@@ -10,9 +10,9 @@ services:
     depends_on:
       - "postgres"
     ports:
-      - 9090:80
+      - 9090:9090
     environment:
-      DB_ENGINE: postgres # Optional: 'sqlite', 'postgres'
+      DB_ENGINE: sqlite # Optional: 'sqlite', 'postgres'
       POSTGRES_USER: mealie
       POSTGRES_PASSWORD: mealie
       POSTGRES_SERVER: postgres
@@ -21,10 +21,4 @@ services:
       # WORKERS_PER_CORE: 0.5
       # MAX_WORKERS: 8
       # WEB_CONCURRENCY: 2
-  postgres:
-    container_name: postgres
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: mealie
-      POSTGRES_USER: mealie
+  
